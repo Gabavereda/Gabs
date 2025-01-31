@@ -1,0 +1,61 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+# Ignorar configurações sensíveis do Spring Boot
+application.properties
+application.yml
+application.yaml
+application-*.properties
+application-*.yml
+application-*.yaml
+
+# Ignorar arquivos de configuração específicos de ambientes
+.env
+config/
+
+# Ignorar credenciais e chaves de segurança
+*.key
+*.pem
+*.crt
+*.p12
+
+# Ignorar arquivos de build e logs
+target/
+logs/
+*.log
+
+# Ignorar dependências do Maven/Gradle
+.mvn/
+.gradle/
+
