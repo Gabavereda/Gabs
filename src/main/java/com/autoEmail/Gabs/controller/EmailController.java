@@ -1,6 +1,6 @@
 package com.autoEmail.Gabs.controller;
 
-import com.autoEmail.Gabs.model.Email;
+import com.autoEmail.Gabs.model.EmailIdentidade;
 import com.autoEmail.Gabs.repository.EmailRepository;
 import com.autoEmail.Gabs.service.EmailService;
 import java.io.IOException;
@@ -26,19 +26,19 @@ public class EmailController {
 
     // cadastrar um email 
     @PostMapping("/cadastrar")
-    public Email cadastrarEmail(@RequestBody Email email) {
+    public EmailIdentidade cadastrarEmail(@RequestBody EmailIdentidade email) {
         return emailRepository.save(email);
     }
 
     // listar os emails
     @GetMapping("/listar")
-    public List<Email> listarEmails() {
+    public List<EmailIdentidade> listarEmails() {
         return emailRepository.findAll();
     }
 
     @PostMapping("/enviar/{id}")
     public String enviarEmail(@PathVariable Long id) throws IOException {
-        Email email = emailRepository.findById(id)
+        EmailIdentidade email = emailRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Email não encontrado"));
         emailService.enviarEmail(email.getDestinatario(), email.getAssunto(), email.getMessage());
         return "Email enviado Com sucesso";
