@@ -36,7 +36,7 @@ public class EmailController {
         return emailRepository.findAll();
     }
 
-    @PostMapping("/enviar/{id}")
+    @PostMapping("enviar/${id}")
     public String enviarEmail(@PathVariable Long id) throws IOException {
         Email email = emailRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Email não encontrado"));
