@@ -31,7 +31,16 @@ public class EmailService {
             request.setEndpoint("mail/send");
             request.setBody(mail.build());
             Response response = sg.api(request);
-            System.out.println("Status: " + response.getStatusCode());
+
+            System.out.println("Status Code: " + response.getStatusCode());
+            System.out.println("Response Body: " + response.getBody());
+            System.out.println("Response Headers: " + response.getHeaders());
+
+            if (response.getStatusCode() >= 200 && response.getStatusCode() < 300) {
+                System.out.println("✅ E-mail enviado com sucesso!");
+            } else {
+                System.err.println("❌ Falha ao enviar e-mail: " + response.getBody());
+            }
         } catch (IOException ex) {
             throw new RuntimeException("Erro ao enviar e-mail", ex);
         }
