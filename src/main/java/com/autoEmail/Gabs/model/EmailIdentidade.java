@@ -13,7 +13,7 @@ import lombok.Data;
 public class EmailIdentidade {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String destinatario;
     private String assunto;
